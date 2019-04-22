@@ -43,7 +43,11 @@ class SearchQuery extends Component {
   render() {
     const displayArticles = this.state.keys.map(item => (
       <div className="results">
-        <a target="_blank" href={"https://en.wikipedia.org/?curid=" + item}>
+        <a
+          key={item}
+          target="_blank"
+          href={"https://en.wikipedia.org/?curid=" + item}
+        >
           <h3>{this.state.articles[item].title}</h3>
           <p>{this.state.articles[item].extract}</p>
         </a>
