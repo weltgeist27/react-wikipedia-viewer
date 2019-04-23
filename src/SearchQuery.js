@@ -8,6 +8,10 @@ class SearchQuery extends Component {
       articles: [],
       keys: []
     };
+
+    //resets state to initial state
+    this.initialState = { ...this.state };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -38,6 +42,7 @@ class SearchQuery extends Component {
         this.setState({ keys: pageids });
       });
     console.log("after");
+    this.setState(this.initialState);
   }
 
   render() {
